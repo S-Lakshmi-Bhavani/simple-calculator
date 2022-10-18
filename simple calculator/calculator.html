@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=button]{
+            width:30px;
+            height:20px;
+            border:1px solid black;
+            border-radius:30%;
+            background-color: rgb(230, 252, 246);
+
+        }
+        input[type=reset]{
+            width:30px;
+            height:20px;
+            border-radius:30%;
+            background-color: rgb(230, 252, 246);
+            text-align: center;
+            border:1px  solid black;
+        }
+        input[type=text]{
+            width:125px;
+            height:20px;
+            margin:3px;
+        }
+        form{
+            border:1px  solid black;
+            width:140px;
+            background-color:rgb(27, 44, 44);
+            text-align:center;
+            margin:auto;
+        }
+      #btneql{
+        width:60px;
+        border-radius:5%;
+        
+      }
+    </style>
+</head>
+<body><form>
+    <table>
+    
+        <tr>
+        <input type="text" id="display">
+        </tr>
+        <tr>
+        <td><input type="button" value="1" onclick="cal(1)"></td>
+        <td><input type="button"  value="2" onclick="cal(2)"></td>
+        <td><input type="button" value="3" onclick="cal(3)"></td>
+        <td><input type="button" value="del" onclick="del()" ></td>
+         
+        </tr>
+        <tr>
+         <td><input type="button" value="4" onclick="cal(4)"></td>
+         <td><input type="button" value="5" onclick="cal(5)"></td>
+         <td><input type="button" value="6" onclick="cal(6)"></td>
+         <td><input type="reset" value="cls"></td>
+         
+        </tr>
+        <tr>
+         <td><input type="button" value="7" onclick="cal(7)"></td>
+         <td><input type="button" value="8" onclick="cal(8)"></td>
+         <td><input type="button" value="9" onclick="cal(9)"></td>
+         <td><input type="button" value="+" onclick="cal('+')"></td>
+        
+        </tr>
+    <tr>
+         <td><input type="button" value="%" onclick="cal('%')"></td>
+         <td><input type="button" value="0"  onclick="cal(0)"></td>
+         <td><input type="button" value="-" onclick="cal('-')"></td>
+         <td><input type="button" value="*" onclick="cal('*')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="/" onclick="cal('/')"></td>
+        <td colspan="2" ><input type="button" value="=" onclick="test('=')" id="btneql"></td>
+        <td><input type="button" value="." onclick="cal('.')"></td>
+    </tr>       
+    </table>
+    </form>
+    <script type="text/javascript">
+    
+        function cal(num){
+            document.getElementById("display").value+=num
+        }
+        function test(){
+            document.getElementById("display").value=eval(document.getElementById("display").value)
+        
+        }
+      function del(){
+       var num=document.getElementById("display").value.slice(0,-1)
+        document.getElementById('display').value=num
+        console.log("result value....", num)
+      }
+    
+        </script>
+</body>
+</html>
